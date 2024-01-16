@@ -11,9 +11,6 @@ def uppercase(str):
         NULL
     """
     for char in str:
-        if 'a' <= char <= 'z':
-            upp_char = chr(ord(char) - ord('a') + ord('A'))
-            print("{}".format(upp_char), end="")
-        else:
-            print("{}".format(char), end="")
-    print() # print a new line at the end
+        print("{}".format(chr(ord(char) - 32)
+                          if 'a' <= char <= 'z' else char), end="")
+    print()  # print a new line at the end
