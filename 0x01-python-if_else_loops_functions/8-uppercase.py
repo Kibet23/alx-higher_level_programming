@@ -10,7 +10,8 @@ def uppercase(str):
     Returns:
         NULL
     """
+    result = ""
     for char in str:
-        print("{}".format(chr(ord(char) - 32)
-                          if 'a' <= char <= 'z' else char), end="")
-    print()  # print a new line at the end
+        result += "{}".format(chr(ord(char) - 32) if 'a' <= char <= 'z' else
+                              char)
+    print(result)  # print a new line at the end
