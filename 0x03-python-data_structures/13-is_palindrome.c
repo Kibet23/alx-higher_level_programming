@@ -10,39 +10,31 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow, *fast, *prev_slow, *temp;
-	listint_t *second_half, *mid_node;
-	int is_palindrome = 1;
-
+	listint_t *slow, *fast, *prev_slow, *second_half;
 	slow = fast = *head;
 	prev_slow = NULL;
 
-	while (fast && fast->next)
+	/*find the middle of the linked list*/
+	while (fast != NULL && fast->next != NULL)
 	{
 		fast = fast->next->next;
 
-		temp = slow->next;
+		listint_t *temp = slow->next;
 		slow->next = prev_slow;
 		prev_slow = slow;
 		slow = temp;
 	}
+	if (fast != NULL)
+		slow = slow->next;
 
-	if (fast)
-		mid_node = slow;
-	else
-		mid_node = slow->next;
-
-	second_half = prev_slow;
-
-	while (mid_node)
+	second_half = slow;
+	while (prev_slow != NULL && second_half != NULL)
 	{
-		if (mid_node->n != second_half->n)
-		{
-			is_palindrome = 0;
-			break;
-		}
-		mid_node = mid_node->next;
+		if (prev_slow->n != second_half->n)
+			return (0);
+
+		prev_slow = prev_slow->next;
 		second_half = second_half->next;
 	}
-	return (is_palindrome);
+	return (1);
 }
