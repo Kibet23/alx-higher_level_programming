@@ -11,11 +11,12 @@ def safe_print_list(my_list=[], x=0):
 
 
     try:
-        for i in range(x):
-            print(my_list[i], end=" ")
-            printedElements += 1
+        for i in my_list:
+            if printedElements < x:
+                print(i, end=" ")
+                printedElements += 1
 
-    except IndexError:
+    except:
         pass
     print()
     return printedElements
