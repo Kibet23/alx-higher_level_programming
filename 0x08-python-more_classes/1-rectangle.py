@@ -5,8 +5,8 @@ class Rectangle:
         """
         initializes a rectangle
         Args:
-        width - width of the rectangle
-        height - height of the rectangle
+        width (int): width of the rectangle
+        height (int): height of the rectangle
         """
         self.width = width
         self.height = height
