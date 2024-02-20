@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""defines Student to JSON with filter"""
+
+
 class Student:
     """Defines a student"""
 
