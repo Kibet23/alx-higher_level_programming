@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Defines a text file-reading function."""
+
 
 def read_file(filename=""):
     """
@@ -6,6 +8,5 @@ def read_file(filename=""):
     Args:
         filename - file to be read
     """
-    with open(filename, encoding='utf-8') as file:
-        for line in file:
-            print(line, end='')
+    with open(filename, encoding='utf-8') as f:
+        print(f.read(), end="")
