@@ -4,6 +4,7 @@
 
 import json
 
+
 class Base:
     """defines the class Base"""
 
